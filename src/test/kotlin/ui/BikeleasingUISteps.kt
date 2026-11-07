@@ -23,11 +23,11 @@ open class BikeleasingUISteps {
             ?: error("Missing 'web.base.url' in serenity.conf or WEB_BASE_URL")
 
     private val expectedHost: String
-        get() {
-            val host = URI(baseUrl).host
-                ?: error("web.base.url must include a host, but was: $baseUrl")
-            return host.removePrefix("www.")
-        }
+        get() = EnvironmentSpecificConfiguration
+            .from(environmentVariables)
+            .getProperty("web.expected.host")
+            ?.removePrefix("www.")
+            ?: error("Missing 'web.expected.host' in serenity.conf or WEB_EXPECTED_HOST")
 
     @Step("Open the Bikeleasing website")
     open fun openHomepage(browser: WebDriver) {
