@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="api.CatFactAPITests" skipped="0" tests="1" time="3.72" timestamp="2026-11-09 09:48:23"><testcase classname="api.CatFactAPITests" name="Fetch cat facts and validate count and length"/></testsuite>
